@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ChakraProvider } from '@chakra-ui/react'
+import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -10,8 +12,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Router>
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
+  </Router>
+</React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
